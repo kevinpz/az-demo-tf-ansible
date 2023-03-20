@@ -1,0 +1,25 @@
+# Auto trigger when a git tag is pushed
+trigger:
+  tags:
+    include:
+    - '*'
+
+# Variables
+variables:
+# ID of the subscription for the deployment
+- name: depl_subscription_id
+  value: 'b34b291e-89b2-4d63-9f9c-1ac3e8f43b4f'
+
+# Load the pipeline template repo
+resources:
+  repositories:
+  - repository: az-pipeline-template-tf-ansible
+    type: github
+    endpoint: Azure
+    name: kevinpz/az-pipeline-template-tf-ansible
+
+# Run the build pipeline
+extends:
+  template: azure-devops-pipeline.yml@az-pipeline-template-tf-ansible
+  parameters:
+    depl_subscription_id: depl_subscription_id
