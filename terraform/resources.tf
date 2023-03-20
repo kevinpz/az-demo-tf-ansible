@@ -19,5 +19,5 @@ module "vm" {
   kv_name         = "kv-mgmt-coffeetimedev"
   kv_secret_name  = "vm-secret"
   subnet_id       = module.vnet.output.subnet_id
-  vm_vm_name      = "vm-terraform-ansible"
+  vm_name         = "vm-terraform-ansible"
 }
