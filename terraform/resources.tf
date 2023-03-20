@@ -18,6 +18,6 @@ module "vm" {
   kv_rg_name      = "rg-keyvault"
   kv_name         = "kv-mgmt-coffeetimedev"
   kv_secret_name  = "vm-secret"
-  subnet_id       = module.vnet.output.subnet_id
+  subnet_id       = module.vnet.subnet_id
   vm_name         = "vm-terraform-ansible"
 }
