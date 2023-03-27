@@ -1,7 +1,5 @@
 ---
 # playbook.yml
-- ansible.builtin.import_playbook: "../../az-pipeline-template-tf-ansible/ansible/defaultpackages/playbook.yml"
-
 - name: 'Configure Image'
   hosts: all
   become: true
@@ -10,6 +8,8 @@
       ansible.builtin.apt:
         update_cache: true
         upgrade: yes
+    - name: Install default packages
+      import_tasks: "../../az-pipeline-template-tf-ansible/ansible/defaultpackages/playbook.yml"
     - name: Install NGINX
       ansible.builtin.apt:
         package:
