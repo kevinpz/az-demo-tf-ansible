@@ -9,7 +9,7 @@
         update_cache: true
         upgrade: yes
     - name: Install default packages
-      import_tasks: "../../az-pipeline-template-tf-ansible/ansible/defaultpackages/playbook.yml"
+      import_tasks: "../../../az-pipeline-template-tf-ansible/ansible/defaultpackages/playbook.yml"
     - name: Install NGINX
       ansible.builtin.apt:
         package:
